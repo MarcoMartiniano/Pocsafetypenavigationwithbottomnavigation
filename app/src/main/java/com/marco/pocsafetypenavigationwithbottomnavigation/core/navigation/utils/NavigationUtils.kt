@@ -3,6 +3,7 @@ package com.marco.pocsafetypenavigationwithbottomnavigation.core.navigation.util
 import com.marco.pocsafetypenavigationwithbottomnavigation.core.navigation.destination.FavoritesHome
 import com.marco.pocsafetypenavigationwithbottomnavigation.core.navigation.destination.HomeScreen
 import com.marco.pocsafetypenavigationwithbottomnavigation.core.navigation.destination.HomeScreen2
+import com.marco.pocsafetypenavigationwithbottomnavigation.core.navigation.destination.Quiz2
 import com.marco.pocsafetypenavigationwithbottomnavigation.core.navigation.destination.QuizHome
 import com.marco.pocsafetypenavigationwithbottomnavigation.core.navigation.destination.StatisticsHome
 
@@ -13,6 +14,7 @@ fun isBottomBarVisible(
     HomeScreen.javaClass.name,
     HomeScreen2.javaClass.name,
     QuizHome.javaClass.name,
+    Quiz2.javaClass.name,
     FavoritesHome.javaClass.name,
     StatisticsHome.javaClass.name,
     -> true
@@ -34,6 +36,7 @@ fun isButtonItemSelected(
     QuizHome.javaClass.name -> {
         when (backStackEntryRouteValue) {
             QuizHome.javaClass.name -> true
+            Quiz2.javaClass.name -> true
             else -> false
         }
     }

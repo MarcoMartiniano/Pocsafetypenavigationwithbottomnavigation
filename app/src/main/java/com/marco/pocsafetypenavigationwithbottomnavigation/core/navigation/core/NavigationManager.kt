@@ -57,7 +57,7 @@ class NavigationManager(
         }
     }
 
-    fun popStackBackInclusive(routeDestination: String, routeRoot: String) {
+    fun popStackBackInclusive(routeDestination: Any, routeRoot: Any) {
         applicationScope.launch {
             _commands.send(
                 NavigationCommand.PopStackBackInclusive(
@@ -85,7 +85,7 @@ sealed class NavigationCommand {
     data object NavigateUp : NavigationCommand()
 
     data object PopStackBack : NavigationCommand()
-    data class PopStackBackInclusive(val routeDestination: String, val routeRoot: String) :
+    data class PopStackBackInclusive(val routeDestination: Any, val routeRoot: Any) :
         NavigationCommand()
 
     data class SwitchTabs(

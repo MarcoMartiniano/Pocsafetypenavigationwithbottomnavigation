@@ -1,4 +1,4 @@
-package com.marco.pocsafetypenavigationwithbottomnavigation.features.statistics
+package com.marco.pocsafetypenavigationwithbottomnavigation.features.quiz.quiz_screen3
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -10,12 +10,12 @@ import androidx.compose.ui.Modifier
 
 
 @Composable
-fun StatisticScreen() {
+fun QuizScreen3() {
     Column(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text(text = "Statistics")
+        Text(text = "Quiz3")
     }
 }

@@ -1,4 +1,4 @@
-package com.marco.pocsafetypenavigationwithbottomnavigation.features.home.home_screen3
+package com.marco.pocsafetypenavigationwithbottomnavigation.features.quiz.quiz_screen2
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -15,26 +15,31 @@ import org.koin.androidx.compose.koinViewModel
 
 
 @Composable
-fun HomeScreen3() {
-    val viewModel: HomeScreen3ViewModel = koinViewModel()
-    val action: (HomeScreen3ViewAction) -> Unit = { viewModel.dispatchViewAction(it) }
+fun QuizScreen2() {
+    val viewModel: QuizScreen2ViewModel = koinViewModel()
+    val action: (QuizScreen2ViewAction) -> Unit = { viewModel.dispatchViewAction(it) }
     Column(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text(text = "Home3 without navBar")
-        Spacer(modifier = Modifier.height(8.dp))
+        Text(text = "Quiz2")
         Button(onClick = {
-            action(HomeScreen3ViewAction.Navigation.BackHome2)
+            action(QuizScreen2ViewAction.Navigation.QuizScreen3)
         }) {
-            Text(text = "Navigate back to Home2")
+            Text(text = "Navigate to Quiz3")
         }
         Spacer(modifier = Modifier.height(8.dp))
         Button(onClick = {
-            action(HomeScreen3ViewAction.Navigation.BackHome)
+            action(QuizScreen2ViewAction.Navigation.HomeScreen)
         }) {
-            Text(text = "Navigate back to Home")
+            Text(text = "Navigate to Home")
+        }
+        Spacer(modifier = Modifier.height(8.dp))
+        Button(onClick = {
+            action(QuizScreen2ViewAction.Navigation.HomeSwitchTab)
+        }) {
+            Text(text = "Navigate to Home switching tabs")
         }
     }
 }

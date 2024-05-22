@@ -11,3 +11,8 @@ object HomeScreen2
 
 @Serializable
 object HomeScreen3
+
+@Serializable
+data class HomeScreen4(
+    val name: String?,
+)

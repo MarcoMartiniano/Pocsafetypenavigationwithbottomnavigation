@@ -44,6 +44,12 @@ fun HomeScreenFactory(viewModel: HomeScreenViewModel) {
         }
         Spacer(modifier = Modifier.height(8.dp))
         Button(onClick = {
+            action(HomeScreenViewAction.Navigation.HomeScreen4)
+        }) {
+            Text(text = "Navigate to Home4 without navBar and with argument: name")
+        }
+        Spacer(modifier = Modifier.height(8.dp))
+        Button(onClick = {
             action(HomeScreenViewAction.Navigation.QuizTab)
         }) {
             Text(text = "Navigate to Quiz tab")
