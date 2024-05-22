@@ -17,5 +17,6 @@ sealed class HomeScreenViewAction {
     object Navigation {
         data object HomeScreen2 : HomeScreenViewAction()
         data object HomeScreen3 : HomeScreenViewAction()
+        data object QuizTab : HomeScreenViewAction()
     }
 }

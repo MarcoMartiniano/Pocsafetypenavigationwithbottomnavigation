@@ -51,7 +51,7 @@ class NavigationManager(
         }
     }
 
-    fun switchTabs(route: String) {
+    fun switchTabs(route: Any) {
         applicationScope.launch {
             _commands.send(NavigationCommand.SwitchTabs(route = route))
         }
@@ -89,6 +89,6 @@ sealed class NavigationCommand {
         NavigationCommand()
 
     data class SwitchTabs(
-        val route: String,
+        val route: Any,
     ) : NavigationCommand()
 }
