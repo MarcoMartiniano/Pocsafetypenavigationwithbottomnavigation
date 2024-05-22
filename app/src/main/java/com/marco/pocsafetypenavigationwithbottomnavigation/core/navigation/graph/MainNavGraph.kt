@@ -7,14 +7,14 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
+import com.marco.pocsafetypenavigationwithbottomnavigation.core.navigation.destination.Main
 import com.marco.pocsafetypenavigationwithbottomnavigation.core.navigation.navigation.MainNavigation
-import com.marco.pocsafetypenavigationwithbottomnavigation.core.navigation.destination.Routes
 import com.marco.pocsafetypenavigationwithbottomnavigation.features.main.MainScreen
 
 internal fun NavGraphBuilder.addMainNavGraph(
     mainNavHostController: NavHostController,
 ) {
-    composable<Routes.Main> {
+    composable<Main> {
         MainScreen(
             navHostController = mainNavHostController,
             content = {

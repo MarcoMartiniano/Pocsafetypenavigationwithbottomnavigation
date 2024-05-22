@@ -1,4 +1,4 @@
-package com.marco.pocsafetypenavigationwithbottomnavigation.uikit.components
+package com.marco.pocsafetypenavigationwithbottomnavigation.core.uikit.components
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -20,6 +20,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
+import com.marco.pocsafetypenavigationwithbottomnavigation.core.navigation.utils.isButtonItemSelected
 import com.marco.pocsafetypenavigationwithbottomnavigation.domain.models.BottomNavItem
 
 @Composable
@@ -38,10 +39,13 @@ fun BottomNavigationBar(
         containerColor = Color.Yellow
     ) {
         items.forEach { item ->
-            val selected = item.route.javaClass.name.replace(
-                "$",
-                "."
-            ) == backStackEntry.value?.destination?.route
+            val backStackEntryValue = backStackEntry.value?.destination?.route
+            val navButtonItemRoute = item.route.javaClass.name
+
+            val selected = isButtonItemSelected(
+                navButtonItemRoute = navButtonItemRoute,
+                backStackEntryRouteValue = backStackEntryValue
+            )
 
             NavigationBarItem(
                 modifier = Modifier.testTag(testTag ?: "BooksBottomNavigationBarItem"),

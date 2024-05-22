@@ -18,9 +18,13 @@ import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import com.marco.pocsafetypenavigationwithbottomnavigation.R
-import com.marco.pocsafetypenavigationwithbottomnavigation.core.navigation.destination.Routes
+import com.marco.pocsafetypenavigationwithbottomnavigation.core.navigation.destination.FavoritesHome
+import com.marco.pocsafetypenavigationwithbottomnavigation.core.navigation.destination.HomeScreen
+import com.marco.pocsafetypenavigationwithbottomnavigation.core.navigation.destination.QuizHome
+import com.marco.pocsafetypenavigationwithbottomnavigation.core.navigation.destination.StatisticsHome
+import com.marco.pocsafetypenavigationwithbottomnavigation.core.navigation.utils.isBottomBarVisible
+import com.marco.pocsafetypenavigationwithbottomnavigation.core.uikit.components.BottomNavigationBar
 import com.marco.pocsafetypenavigationwithbottomnavigation.domain.models.BottomNavItem
-import com.marco.pocsafetypenavigationwithbottomnavigation.uikit.components.BottomNavigationBar
 
 @Composable
 fun MainScreen(
@@ -30,44 +34,37 @@ fun MainScreen(
     var showBottomBar by rememberSaveable { mutableStateOf(true) }
     val navBackStackEntry by navHostController.currentBackStackEntryAsState()
 
-//    showBottomBar = when (navBackStackEntry?.destination?.route) {
-//        NavItemRoute.Routes.HOME_SCREEN,
-//        NavItemRoute.Routes.HOME_QUIZ_SCREEN,
-//        NavItemRoute.Routes.ENCYCLOPEDIA_SCREEN,
-//        NavItemRoute.Routes.FAVORITES_SCREEN,
-//        -> true
-//
-//        else -> false
-//    }
+    showBottomBar =
+        isBottomBarVisible(backStackEntryRouteValue = navBackStackEntry?.destination?.route)
+
     Scaffold(
         modifier = Modifier.background(
             color = Black,
             shape = RoundedCornerShape(16.dp)
         ),
         bottomBar = {
-            val a = Routes.Home
             if (showBottomBar) {
                 BottomNavigationBar(
                     items = listOf(
                         BottomNavItem(
                             name = "Home",
                             icon = ImageVector.vectorResource(id = R.drawable.ic_home),
-                            route = Routes.Home.Home
+                            route = HomeScreen
                         ),
                         BottomNavItem(
                             name = "Quiz",
                             icon = ImageVector.vectorResource(id = R.drawable.ic_quiz),
-                            route = Routes.Quiz.Home
+                            route = QuizHome
                         ),
                         BottomNavItem(
                             name = "Statistcs",
                             icon = ImageVector.vectorResource(id = R.drawable.ic_encyclopedia),
-                            route = Routes.Statistics.Home
+                            route = StatisticsHome
                         ),
                         BottomNavItem(
                             name = "Favorites",
                             icon = ImageVector.vectorResource(id = R.drawable.ic_favorite),
-                            route = Routes.Favorites.Home
+                            route = FavoritesHome
                         ),
                     ),
                     navController = navHostController,

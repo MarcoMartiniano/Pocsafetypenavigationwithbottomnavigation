@@ -16,7 +16,7 @@ class NavigationManager(
     val commands = _commands.receiveAsFlow()
 
     private fun navigate(
-        route: String,
+        route: Any,
         navOptions: NavOptions? = null,
     ) {
         applicationScope.launch {
@@ -31,7 +31,7 @@ class NavigationManager(
     }
 
     fun navigate(
-        route: String,
+        route: Any,
         builder: NavOptionsBuilder.() -> Unit = {
             launchSingleTop = true
         },
@@ -77,7 +77,7 @@ sealed class NavigationType {
 sealed class NavigationCommand {
 
     data class Navigate(
-        val destination: String,
+        val destination: Any,
         val navOptions: NavOptions? = null,
         val type: NavigationType,
     ) : NavigationCommand()

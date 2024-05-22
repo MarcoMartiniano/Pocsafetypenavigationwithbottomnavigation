@@ -3,14 +3,15 @@ package com.marco.pocsafetypenavigationwithbottomnavigation.core.navigation.grap
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
-import com.marco.pocsafetypenavigationwithbottomnavigation.core.navigation.destination.Routes
+import com.marco.pocsafetypenavigationwithbottomnavigation.core.navigation.destination.Statistics
+import com.marco.pocsafetypenavigationwithbottomnavigation.core.navigation.destination.StatisticsHome
 import com.marco.pocsafetypenavigationwithbottomnavigation.features.statistics.StatisticScreen
 
 internal fun NavGraphBuilder.addStatisticsNavGraph() {
-    navigation<Routes.Statistics>(
-        startDestination = Routes.Statistics.Home
+    navigation<Statistics>(
+        startDestination = StatisticsHome
     ) {
-        composable<Routes.Statistics.Home> {
+        composable<StatisticsHome> {
             StatisticScreen()
         }
     }
