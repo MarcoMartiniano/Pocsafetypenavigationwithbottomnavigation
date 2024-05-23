@@ -14,7 +14,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -28,8 +27,7 @@ fun BottomNavigationBar(
     items: List<BottomNavItem>,
     navController: NavController,
     modifier: Modifier = Modifier,
-    onItemClick: (BottomNavItem) -> Unit,
-    testTag: String? = null,
+    onItemClick: (BottomNavItem) -> Unit
 ) {
     val backStackEntry = navController.currentBackStackEntryAsState()
 
@@ -39,16 +37,11 @@ fun BottomNavigationBar(
         containerColor = Color.Yellow
     ) {
         items.forEach { item ->
-            val backStackEntryValue = backStackEntry.value?.destination?.route
-            val navButtonItemRoute = item.route.javaClass.name
-
             val selected = isButtonItemSelected(
-                navButtonItemRoute = navButtonItemRoute,
-                backStackEntryRouteValue = backStackEntryValue
+                navButtonItemRoute = item.route.javaClass.name,
+                backStackEntryRouteValue = backStackEntry.value?.destination?.route
             )
-
             NavigationBarItem(
-                modifier = Modifier.testTag(testTag ?: "BooksBottomNavigationBarItem"),
                 selected = selected,
                 colors = NavigationBarItemDefaults.colors(
                     selectedIconColor = Color.Red,
