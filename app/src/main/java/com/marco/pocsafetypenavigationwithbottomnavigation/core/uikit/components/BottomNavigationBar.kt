@@ -20,6 +20,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import com.marco.pocsafetypenavigationwithbottomnavigation.core.navigation.utils.isButtonItemSelected
+import com.marco.pocsafetypenavigationwithbottomnavigation.core.navigation.utils.removeRouteArgs
 import com.marco.pocsafetypenavigationwithbottomnavigation.domain.model.BottomNavItem
 
 @Composable
@@ -27,7 +28,7 @@ fun BottomNavigationBar(
     items: List<BottomNavItem>,
     navController: NavController,
     modifier: Modifier = Modifier,
-    onItemClick: (BottomNavItem) -> Unit
+    onItemClick: (BottomNavItem) -> Unit,
 ) {
     val backStackEntry = navController.currentBackStackEntryAsState()
 
@@ -39,7 +40,9 @@ fun BottomNavigationBar(
         items.forEach { item ->
             val selected = isButtonItemSelected(
                 navButtonItemRoute = item.route.javaClass.name,
-                backStackEntryRouteValue = backStackEntry.value?.destination?.route
+                backStackEntryRouteValue = backStackEntry.value?.destination?.route?.removeRouteArgs(
+                    "/"
+                )
             )
             NavigationBarItem(
                 selected = selected,

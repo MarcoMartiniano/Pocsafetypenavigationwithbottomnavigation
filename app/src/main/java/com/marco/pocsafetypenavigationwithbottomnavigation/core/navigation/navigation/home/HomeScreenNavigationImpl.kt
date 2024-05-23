@@ -5,6 +5,7 @@ import com.marco.pocsafetypenavigationwithbottomnavigation.core.navigation.desti
 import com.marco.pocsafetypenavigationwithbottomnavigation.core.navigation.destination.HomeScreen3
 import com.marco.pocsafetypenavigationwithbottomnavigation.core.navigation.destination.HomeScreen4
 import com.marco.pocsafetypenavigationwithbottomnavigation.core.navigation.destination.HomeScreen5
+import com.marco.pocsafetypenavigationwithbottomnavigation.core.navigation.destination.HomeScreen6
 import com.marco.pocsafetypenavigationwithbottomnavigation.core.navigation.destination.Quiz
 import com.marco.pocsafetypenavigationwithbottomnavigation.domain.model.User
 import com.marco.pocsafetypenavigationwithbottomnavigation.features.home.home_screen.HomeScreenNavigation
@@ -35,6 +36,14 @@ class HomeScreenNavigationImpl(
     override fun navigateToHomeScreen5(user: User) {
         navigationManager.navigate(
             HomeScreen5(
+                user = user
+            )
+        )
+    }
+
+    override fun navigateToHomeScreen6(user: User) {
+        navigationManager.navigate(
+            HomeScreen6(
                 user = user
             )
         )

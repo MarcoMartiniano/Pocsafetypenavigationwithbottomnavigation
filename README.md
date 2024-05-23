@@ -6,6 +6,8 @@ HomeScreen
 * Navigate to Home2: Navigate to HomeScreen2 with BottomNavigationBar visible.
 * Navigate to Home3 without navBar: Navigate to HomeScreen3 with BottomNavigationBar NOT visible.
 * Navigate to Home4 without navBar: Navigate and pass a string called 'name' to HomeScreen4 with BottomNavigationBar NOT visible.
+* Navigate to Home5 without navBar: Navigate and pass an object User called 'user' to HomeScreen5 with BottomNavigationBar NOT visible.
+* Navigate to Home6 without navBar: Navigate and pass an object User called 'user' to HomeScreen6 with BottomNavigationBar visible.
 * Navigate to Quiz tab: Navigate(Switch) to QuizTab.
 
 HomeScreen2

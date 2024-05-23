@@ -32,6 +32,12 @@ fun HomeScreenFactory(viewModel: HomeScreenViewModel) {
         Text(text = "Home")
         Spacer(modifier = Modifier.height(8.dp))
         Button(onClick = {
+            action(HomeScreenViewAction.Navigation.QuizTab)
+        }) {
+            Text(text = "Navigate to Quiz tab")
+        }
+        Spacer(modifier = Modifier.height(8.dp))
+        Button(onClick = {
             action(HomeScreenViewAction.Navigation.HomeScreen2)
         }) {
             Text(text = "Navigate to Home2")
@@ -56,9 +62,9 @@ fun HomeScreenFactory(viewModel: HomeScreenViewModel) {
         }
         Spacer(modifier = Modifier.height(8.dp))
         Button(onClick = {
-            action(HomeScreenViewAction.Navigation.QuizTab)
+            action(HomeScreenViewAction.Navigation.HomeScreen6(user = User(name = "Marco")))
         }) {
-            Text(text = "Navigate to Quiz tab")
+            Text(text = "Navigate to Home6 with navBar and with argument: User(name = Marco)")
         }
     }
 

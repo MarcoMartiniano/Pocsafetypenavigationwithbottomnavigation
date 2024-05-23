@@ -7,5 +7,6 @@ interface HomeScreenNavigation {
     fun navigateToHomeScreen3()
     fun navigateToHomeScreen4(name: String)
     fun navigateToHomeScreen5(user: User)
+    fun navigateToHomeScreen6(user: User)
     fun navigateToQuizTab()
 }

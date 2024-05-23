@@ -22,3 +22,8 @@ data class HomeScreen4(
 data class HomeScreen5(
     val user: User,
 )
+
+@Serializable
+data class HomeScreen6(
+    val user: User,
+)

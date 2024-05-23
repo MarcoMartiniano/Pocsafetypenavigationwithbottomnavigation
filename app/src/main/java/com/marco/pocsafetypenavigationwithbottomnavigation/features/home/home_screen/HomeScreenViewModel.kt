@@ -15,6 +15,7 @@ class HomeScreenViewModel : ViewModel(), KoinComponent {
             HomeScreenViewAction.Navigation.QuizTab -> navigation.navigateToQuizTab()
             HomeScreenViewAction.Navigation.HomeScreen4 -> navigation.navigateToHomeScreen4(name = "Marco")
             is HomeScreenViewAction.Navigation.HomeScreen5 -> navigation.navigateToHomeScreen5(user = viewAction.user)
+            is HomeScreenViewAction.Navigation.HomeScreen6 -> navigation.navigateToHomeScreen6(user = viewAction.user)
         }
     }
 }

@@ -10,6 +10,7 @@ import com.marco.pocsafetypenavigationwithbottomnavigation.core.navigation.desti
 import com.marco.pocsafetypenavigationwithbottomnavigation.core.navigation.destination.HomeScreen3
 import com.marco.pocsafetypenavigationwithbottomnavigation.core.navigation.destination.HomeScreen4
 import com.marco.pocsafetypenavigationwithbottomnavigation.core.navigation.destination.HomeScreen5
+import com.marco.pocsafetypenavigationwithbottomnavigation.core.navigation.destination.HomeScreen6
 import com.marco.pocsafetypenavigationwithbottomnavigation.core.navigation.utils.parcelableType
 import com.marco.pocsafetypenavigationwithbottomnavigation.domain.model.User
 import com.marco.pocsafetypenavigationwithbottomnavigation.features.home.home_screen.HomeScreen
@@ -17,6 +18,7 @@ import com.marco.pocsafetypenavigationwithbottomnavigation.features.home.home_sc
 import com.marco.pocsafetypenavigationwithbottomnavigation.features.home.home_screen3.HomeScreen3
 import com.marco.pocsafetypenavigationwithbottomnavigation.features.home.home_screen4.Home4
 import com.marco.pocsafetypenavigationwithbottomnavigation.features.home.home_screen5.Home5
+import com.marco.pocsafetypenavigationwithbottomnavigation.features.home.home_screen6.Home6
 import kotlin.reflect.typeOf
 
 internal fun NavGraphBuilder.addHomeNavGraph() {
@@ -42,6 +44,13 @@ internal fun NavGraphBuilder.addHomeNavGraph() {
         ) {
             val args = it.toRoute<HomeScreen5>()
             Home5(user = args.user)
+        }
+        composable<HomeScreen6>(
+            typeMap = mapOf(typeOf<User>() to parcelableType<User>())
+
+        ) {
+            val args = it.toRoute<HomeScreen6>()
+            Home6(user = args.user)
         }
     }
 }

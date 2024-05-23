@@ -3,6 +3,7 @@ package com.marco.pocsafetypenavigationwithbottomnavigation.core.navigation.util
 import com.marco.pocsafetypenavigationwithbottomnavigation.core.navigation.destination.FavoritesHome
 import com.marco.pocsafetypenavigationwithbottomnavigation.core.navigation.destination.HomeScreen
 import com.marco.pocsafetypenavigationwithbottomnavigation.core.navigation.destination.HomeScreen2
+import com.marco.pocsafetypenavigationwithbottomnavigation.core.navigation.destination.HomeScreen6
 import com.marco.pocsafetypenavigationwithbottomnavigation.core.navigation.destination.Quiz2
 import com.marco.pocsafetypenavigationwithbottomnavigation.core.navigation.destination.QuizHome
 import com.marco.pocsafetypenavigationwithbottomnavigation.core.navigation.destination.StatisticsHome
@@ -13,6 +14,7 @@ fun isBottomBarVisible(
 ): Boolean = when (backStackEntryRouteValue) {
     HomeScreen.javaClass.name,
     HomeScreen2.javaClass.name,
+    HomeScreen6.Companion::class.java.name.removeRouteArgs("$"),
     QuizHome.javaClass.name,
     Quiz2.javaClass.name,
     FavoritesHome.javaClass.name,
@@ -28,7 +30,12 @@ fun isButtonItemSelected(
 ): Boolean = when (navButtonItemRoute) {
     HomeScreen.javaClass.name -> {
         when (backStackEntryRouteValue) {
-            HomeScreen.javaClass.name, HomeScreen2.javaClass.name -> true
+            HomeScreen.javaClass.name, HomeScreen2.javaClass.name,
+            HomeScreen6.Companion::class.java.name.removeRouteArgs(
+                "$"
+            ),
+            -> true
+
             else -> false
         }
     }
@@ -59,3 +66,5 @@ fun isButtonItemSelected(
         false
     }
 }
+
+fun String.removeRouteArgs(separator: String): String = this.split(separator)[0]
