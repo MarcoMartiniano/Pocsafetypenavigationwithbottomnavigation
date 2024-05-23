@@ -1,5 +1,5 @@
 # Navigation with Jetpack Compose using safe type and with BottomNavigation
-## this study aims to implement Type Safe Compose Navigation together with BottomNavigationBar.
+## This study aims to implement Type Safe Compose Navigation together with BottomNavigationBar.
 ## Below you can find the screens and different navigation scenarios.
 
 HomeScreen
@@ -32,5 +32,5 @@ QuizScreen2
 * 4- Click button Navigate to Quiz tab.
 Notice that you are in Screen2. If you want to back to Home clearing the stack, you should use popStackBackInclusive.
 
-## If you find any bug, please let me know.
-## If you find a better way to do this, please share with us.
+### If you find any bug, please let me know.
+### If you find a better way to do this, please share with us.
