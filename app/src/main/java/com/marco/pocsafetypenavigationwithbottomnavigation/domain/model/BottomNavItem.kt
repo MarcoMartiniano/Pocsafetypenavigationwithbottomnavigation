@@ -1,4 +1,4 @@
-package com.marco.pocsafetypenavigationwithbottomnavigation.domain.models
+package com.marco.pocsafetypenavigationwithbottomnavigation.domain.model
 
 import androidx.compose.ui.graphics.vector.ImageVector
 

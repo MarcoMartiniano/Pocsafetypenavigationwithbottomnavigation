@@ -24,7 +24,7 @@ import com.marco.pocsafetypenavigationwithbottomnavigation.core.navigation.desti
 import com.marco.pocsafetypenavigationwithbottomnavigation.core.navigation.destination.StatisticsHome
 import com.marco.pocsafetypenavigationwithbottomnavigation.core.navigation.utils.isBottomBarVisible
 import com.marco.pocsafetypenavigationwithbottomnavigation.core.uikit.components.BottomNavigationBar
-import com.marco.pocsafetypenavigationwithbottomnavigation.domain.models.BottomNavItem
+import com.marco.pocsafetypenavigationwithbottomnavigation.domain.model.BottomNavItem
 
 @Composable
 fun MainScreen(

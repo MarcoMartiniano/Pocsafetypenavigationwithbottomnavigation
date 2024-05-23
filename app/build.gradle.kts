@@ -2,6 +2,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.kotlin.serialization)
+    id("kotlin-parcelize")
+
 }
 
 android {
@@ -72,4 +74,5 @@ dependencies {
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.koin.compose)
     implementation(libs.koin.core)
+    implementation(libs.gson.gson)
 }

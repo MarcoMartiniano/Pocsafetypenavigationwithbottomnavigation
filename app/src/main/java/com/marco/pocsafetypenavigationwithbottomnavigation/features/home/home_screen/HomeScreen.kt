@@ -11,6 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.marco.pocsafetypenavigationwithbottomnavigation.domain.model.User
 import org.koin.androidx.compose.koinViewModel
 
 
@@ -23,7 +24,6 @@ fun HomeScreen() {
 @Composable
 fun HomeScreenFactory(viewModel: HomeScreenViewModel) {
     val action: (HomeScreenViewAction) -> Unit = { viewModel.dispatchViewAction(it) }
-    // val viewState by viewModel.state.collectAsState()
     Column(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
@@ -47,6 +47,12 @@ fun HomeScreenFactory(viewModel: HomeScreenViewModel) {
             action(HomeScreenViewAction.Navigation.HomeScreen4)
         }) {
             Text(text = "Navigate to Home4 without navBar and with argument: name")
+        }
+        Spacer(modifier = Modifier.height(8.dp))
+        Button(onClick = {
+            action(HomeScreenViewAction.Navigation.HomeScreen5(user = User(name = "Marco")))
+        }) {
+            Text(text = "Navigate to Home5 without navBar and with argument: User(name = Marco)")
         }
         Spacer(modifier = Modifier.height(8.dp))
         Button(onClick = {

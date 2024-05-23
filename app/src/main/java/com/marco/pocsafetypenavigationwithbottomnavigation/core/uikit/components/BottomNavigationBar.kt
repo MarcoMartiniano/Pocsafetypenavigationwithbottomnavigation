@@ -21,7 +21,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import com.marco.pocsafetypenavigationwithbottomnavigation.core.navigation.utils.isButtonItemSelected
-import com.marco.pocsafetypenavigationwithbottomnavigation.domain.models.BottomNavItem
+import com.marco.pocsafetypenavigationwithbottomnavigation.domain.model.BottomNavItem
 
 @Composable
 fun BottomNavigationBar(
